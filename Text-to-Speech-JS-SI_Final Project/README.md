@@ -42,7 +42,7 @@ A feature-rich Text-to-Speech (TTS) application powered by Azure Cognitive Servi
 **1. Clone the repository:**
 
 ```
-git clone https://github.com/PraveenKumarChettibilli/Text-to-Speech-JS.git
+git clone  https://github.com/SaiShankerJaina/System-Integration-Final-Project.git 
 cd Text-to-Speech-JS
 ```
 
@@ -134,7 +134,7 @@ curl -X POST http://localhost:3000/synthesize \
 3. Clone this repository onto your server:
 
 ```
-git clone https://github.com/PraveenKumarChettibilli/Text-to-Speech-JS.git
+git clone https://github.com/SaiShankerJaina/System-Integration-Final-Project.git 
 cd Text-to-Speech-JS
 npm install
 ```
