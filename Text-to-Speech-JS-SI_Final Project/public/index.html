@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #0000FF; /* Blue color for the title */
+        }
+        label {
+            font-weight: bold;
+        }
+        textarea, select, button {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+            width: 100%;
+            max-width: 600px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #0000FF; /* Blue color for the button */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #000099; /* Darker blue for hover effect */
+        }
+        audio {
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text-to-Speech Converter</h1>
+
+    <!-- Text input -->
+    <label for="textInput">Enter text to convert to speech:</label>
+    <textarea id="textInput" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+
+    <!-- Voice selection -->
+    <label for="voiceSelect">Select a voice:</label>
+    <select id="voiceSelect">
+        <option value="en-US-AvaMultilingualNeural">en-US-AvaMultilingualNeural (Female)</option>
+        <option value="en-US-AndrewMultilingualNeural">en-US-AndrewMultilingualNeural (Male)</option>
+        <option value="en-NZ-MitchellNeural">en-NZ-MitchellNeural (Male)</option>
+        <option value="en-NZ-MollyNeural">en-NZ-MollyNeural (Female)</option>
+    </select>
+
+    <!-- Button for synthesis -->
+    <button id="synthesizeButton">Synthesize Text</button>
+
+    <!-- Audio player -->
+    <h2>Audio Player:</h2>
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        const synthesizeButton = document.getElementById('synthesizeButton');
+        const textInput = document.getElementById('textInput');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        // Event listener for synthesis
+        synthesizeButton.addEventListener('click', async () => {
+            const text = textInput.value.trim();
+            const voiceName = voiceSelect.value;
+    
+            if (!text) {
+                alert('Please enter some text to convert.');
+                return;
+            }
+    
+            try {
+                // Show a loading message to indicate processing
+                synthesizeButton.textContent = 'Synthesizing...';
+                synthesizeButton.disabled = true;
+    
+                const response = await fetch('http://45.55.248.22:3000/synthesize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, voiceName }),
+                });
+    
+                const result = await response.json();
+    
+                if (response.ok) {
+                    const audioUrl = result.audioUrl;
+                    console.log("Audio URL received:", audioUrl); // Log the URL for debugging
+    
+                    // Explicitly load and play the new audio file
+                    audioPlayer.src = audioUrl;
+                    audioPlayer.load(); // Ensure the audio file is reloaded
+                    audioPlayer.play(); // Play the audio
+                } else {
+                    alert('Error synthesizing text: ' + (result.error || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('An error occurred: ' + error.message);
+            } finally {
+                // Reset the button text and re-enable it
+                synthesizeButton.textContent = 'Synthesize Text';
+                synthesizeButton.disabled = false;
+            }
+        });
+    </script>    
+</body>
+</html>

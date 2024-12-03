@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Text-to-Speech API",
+      "version": "1.0.0",
+      "description": "API for converting text to speech using Microsoft Azure Cognitive Services."
+    },
+    "servers": [
+      {
+        "url": "http://45.55.248.22:3000",
+        "description": "Deployed server"
+      }
+    ],
+    "paths": {
+      "/status": {
+        "get": {
+          "summary": "Check server status",
+          "description": "Returns the current status of the server.",
+          "responses": {
+            "200": {
+              "description": "Server is running",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "string",
+                        "example": "Server is running!"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/synthesize": {
+        "post": {
+          "summary": "Synthesize text to speech",
+          "description": "Converts the provided text to speech using the selected voice.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "description": "The text to convert to speech.",
+                      "example": "Hello, this is a text-to-speech test."
+                    },
+                    "voiceName": {
+                      "type": "string",
+                      "description": "The name of the voice to use for synthesis.",
+                      "example": "en-US-AvaMultilingualNeural"
+                    }
+                  },
+                  "required": ["text", "voiceName"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Audio URL for the synthesized speech",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "audioUrl": {
+                        "type": "string",
+                        "description": "The URL of the synthesized audio file.",
+                        "example": "http://45.55.248.22:3000/output_1691234567890.wav"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "example": "Text is required for synthesis."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "example": "Internal Server Error."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
