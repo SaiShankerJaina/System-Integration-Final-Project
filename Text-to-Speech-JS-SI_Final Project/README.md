@@ -88,7 +88,7 @@ http://localhost:3000
 ```
 
 **Screenshot of UI or Web Interface for referrence**
-![Web Interface](./screenshots/live_demo_img.jpg)
+![Web Interface](./screenshots/livedemo_Ui.jpg)
 
 **2. Enter the text in the text field, select the voice from the drop down and click on "Synthesize Text"**
 
