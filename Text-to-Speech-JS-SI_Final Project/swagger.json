@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "http://45.55.248.22:3000",
+        "url": "http://159.65.182.115:3000/",
         "description": "Deployed server"
       }
     ],
