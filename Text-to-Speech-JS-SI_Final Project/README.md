@@ -22,9 +22,9 @@ A feature-rich Text-to-Speech (TTS) application powered by Azure Cognitive Servi
 - Swagger API Documentation Screenshot.
 ![Swagger UI Screenshot](./screenshots/swagger_docs_ui.png)
 - Get Request which gives the status of the server.
-![Swagger GET Request](./screenshots/swagger_get.png)
+![Swagger GET Request](./screenshots/swagger_getresponse.png)
 - Post Request which gives the synthesize audio file as output.
-![Swagger POST Request](./screenshots/swagger_post.png)
+![Swagger POST Request](./screenshots/swagger_postresponse.png)
 
 ### Audio File Example Responses on Swagger UI
 ![Audio File Responses](./screenshots/swagger_audio_responses.png)
