@@ -151,8 +151,8 @@ pm2 start app.js --name text-to-speech
 
 # 🔥 Demo
 
-Check out the deployed version here: [Live Demo](http://45.55.248.22:3000/)
-and deployed Swagger Documentation here: [Live Swagger Documentation](http://45.55.248.22:3000/api-docs/)
+Check out the deployed version here: [Live Demo](http://159.65.182.115:3000/)
+and deployed Swagger Documentation here: [Live Swagger Documentation](http://159.65.182.115:3000/api-docs/)
 
 - Refer to the usage steps to explore the demo of the UI or Web interface and Swagger API documentation.
 
