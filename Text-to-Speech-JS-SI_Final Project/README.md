@@ -1,50 +1,55 @@
-# 🌟 Text-to-Speech Application 🎤
+# Text-to-Speech Application 
 
-A feature-rich Text-to-Speech (TTS) application powered by Azure Cognitive Services. Convert text into speech effortlessly and customize voices to your preference. 🌍✨
+A powerful and customizable Text-to-Speech (TTS) app built with Azure Cognitive Services. Effortlessly convert text into high-quality speech and tailor the voice output to your liking.
 
-# 🚀 Features
+---
 
-- 🎙️ Convert text into speech using Microsoft Azure Cognitive Services.
+##  Features
 
-- 🔊 Outputs audio files in high-quality .wav format.
+-  **Text-to-Speech Conversion**: Leverage Microsoft Azure Cognitive Services to convert text into natural-sounding speech.
+-  **High-Quality Output**: Generate and download audio files in crisp `.wav` format.
+-  **Interactive API Documentation**: Explore and test APIs with Swagger UI.
+-  **CORS Enabled**: Access the API from anywhere with Cross-Origin Resource Sharing.
+-  **Flexible Deployment**: Run locally or host on the cloud seamlessly.
 
-- 📜 API documentation with Swagger UI.
+---
 
-- 🌐 Cross-Origin Resource Sharing (CORS) enabled for API access.
+## Screenshots
 
-- 📦 Easily deployable on local and cloud environments.
+### **Swagger UI**
+- API documentation interface:
+  ![Swagger UI Screenshot](./screenshots/swagger_docs_ui.png)
 
+- **GET Request**: Server status response.
+  ![Swagger GET Request](./screenshots/swagger_getresponse.png)
 
+- **POST Request**: Audio synthesis API example.
+  ![Swagger POST Request](./screenshots/swagger_postresponse.png)
 
-# 🖼️ Screenshots
+### **Audio File Example**
+- Sample audio file responses via Swagger:
+  ![Audio File Responses](./screenshots/swagger_audio_responses.png)
 
-### Swagger UI
-- Swagger API Documentation Screenshot.
-![Swagger UI Screenshot](./screenshots/swagger_docs_ui.png)
-- Get Request which gives the status of the server.
-![Swagger GET Request](./screenshots/swagger_getresponse.png)
-- Post Request which gives the synthesize audio file as output.
-![Swagger POST Request](./screenshots/swagger_postresponse.png)
+---
 
-### Audio File Example Responses on Swagger UI
-![Audio File Responses](./screenshots/swagger_audio_responses.png)
+## Prerequisites
 
-# 📋 Prerequisites
-1. Node.js (v16 or later recommended)
+Before you get started, ensure you have the following:
 
-2. NPM (comes with Node.js)
+1. **Node.js** (v16 or newer is recommended)
+2. **NPM** (comes with Node.js)
+3. **Azure Cognitive Services Speech Subscription Key**
+   - [Sign up for Azure Cognitive Services](https://azure.microsoft.com/en-us/products/ai-services/)
 
-3. An Azure Cognitive Services Speech Subscription Key
+---
 
-    - [Sign up for Azure Cognitive Services](https://azure.microsoft.com/en-us/products/ai-services/)
+##  Installation
 
-# 🛠️ Installation
-**1. Clone the repository:**
-
-```
-git clone  https://github.com/SaiShankerJaina/System-Integration-Final-Project.git 
+### 1. Clone the repository
+```bash
+git clone https://github.com/SaiShankerJaina/System-Integration-Final-Project.git 
 cd Text-to-Speech-JS
-```
+
 
 **2. Install dependencies:**
 
@@ -58,7 +63,7 @@ npm install
 SPEECH_KEY=your-azure-speech-key
 SPEECH_REGION=your-azure-speech-region
 ```
-> ⚠️ **Note:** Replace `your-azure-speech-key` and `your-azure-speech-region` with your actual speech key and region obtained from Azure Cognitive Services Speech Subscription Key
+>  **Note:** Replace `your-azure-speech-key` and `your-azure-speech-region` with your actual speech key and region obtained from Azure Cognitive Services Speech Subscription Key
 
 **4. Ensure a public folder exists to store generated audio files:**
 
@@ -66,7 +71,7 @@ SPEECH_REGION=your-azure-speech-region
 mkdir public
 ```
 
-> ⚠️ **Note:** Make sure to change the URLs to `http://localhost:3000` to avoid issues or confusion while running it locally.
+>  **Note:** Make sure to change the URLs to `http://localhost:3000` to avoid issues or confusion while running it locally.
 
 **5. Run the app:**
 
@@ -79,7 +84,7 @@ or use PM2 for process management:
 pm2 start app.js --name text-to-speech
 ```
 
-# 🔗 Usage through UI or Web Interface.
+#  Usage through UI or Web Interface.
 
 **1. Access the UI or Web Interface at:**
 
@@ -94,7 +99,7 @@ http://localhost:3000
 
 **3. The Audio file will be played using the "Audio player" below the Synthesize Text button.**
 
-# 🔗 Usage through Swagger API documentation.
+#  Usage through Swagger API documentation.
 
 **1. Access the Swagger API documentation at:**
 
@@ -123,13 +128,13 @@ curl -X POST http://localhost:3000/synthesize \
 ```
 
 
-# 🌍 Deployment on DigitalOcean
+# Deployment on DigitalOcean
 
 1. Set up your server with a CentOS or Ubuntu image.
 
 2. Install Node.js, NPM, and PM2.
 
-> ⚠️ **Note:** Make sure to change the URLs to `http://<your-domain-address:3000>` in the code to avoid issues or confusion while hosting in cloud service.
+>  **Note:** Make sure to change the URLs to `http://<your-domain-address:3000>` in the code to avoid issues or confusion while hosting in cloud service.
 > You can do this by searching for all instances starting with `http://` addresses and replace the complete address with `http://<your-domain-address:3000>`
 3. Clone this repository onto your server:
 
@@ -149,7 +154,7 @@ pm2 start app.js --name text-to-speech
 
 6. Set up a reverse proxy (e.g., NGINX) for secure HTTP requests.
 
-# 🔥 Demo
+# Demo
 
 Check out the deployed version here: [Live Demo](http://159.65.182.115:3000/)
 and deployed Swagger Documentation here: [Live Swagger Documentation](http://159.65.182.115:3000/api-docs/)
@@ -157,7 +162,7 @@ and deployed Swagger Documentation here: [Live Swagger Documentation](http://159
 - Refer to the usage steps to explore the demo of the UI or Web interface and Swagger API documentation.
 
 
-# 🧰 Tech Stack
+# Tech Stack
 
 - **Backend:** Node.js, Express.js
 
@@ -168,9 +173,3 @@ and deployed Swagger Documentation here: [Live Swagger Documentation](http://159
 - **Process Management:** PM2
 
 
-# 🙌 Contributing
-I welcome contributions! Feel free to:
-
-1. Fork the repository.
-2. Make your changes.
-3. Submit a pull request.
