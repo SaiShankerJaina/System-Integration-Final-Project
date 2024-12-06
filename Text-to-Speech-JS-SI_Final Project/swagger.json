@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "http://159.65.182.115:3002/",
+        "url": "http://159.65.182.115:3000/",
         "description": "Deployed server"
       }
     ],
@@ -74,7 +74,7 @@
                       "audioUrl": {
                         "type": "string",
                         "description": "The URL of the synthesized audio file.",
-                        "example": "http://159.65.182.115:3002/output_1691234567890.wav"
+                        "example": "http://159.65.182.115:3000/output_1691234567890.wav"
                       }
                     }
                   }
