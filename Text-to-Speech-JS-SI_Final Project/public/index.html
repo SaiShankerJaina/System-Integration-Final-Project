@@ -88,7 +88,7 @@
                 synthesizeButton.textContent = 'Synthesizing...';
                 synthesizeButton.disabled = true;
     
-                const response = await fetch('', {
+                const response = await fetch('http://45.55.248.22:3000/synthesize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text, voiceName }),
