@@ -17,7 +17,7 @@ A powerful and customizable Text-to-Speech (TTS) app built with Azure Cognitive 
 ## Screenshots
 
 ### *Live Demo UI*
-- Demo UI (./screenshots/livedemo_UI.png)
+ ![Demo UI](./screenshots/livedemo_UI.png)
 
 ### **Swagger UI**
 - API documentation interface:
